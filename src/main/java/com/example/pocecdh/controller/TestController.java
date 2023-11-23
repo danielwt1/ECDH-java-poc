@@ -44,7 +44,12 @@ public class TestController {
     }
     @PostMapping
     public ResponseEntity<TestDTO> postTest(@RequestBody TestDTO dto){
-        dto.setAge("SOY DATA EDITADA");
+         return new ResponseEntity<>(dto, HttpStatus.OK);
+    }
+    @PostMapping
+    public ResponseEntity<TestDTO> postTest2(@RequestBody TestDTO dto){
+        dto.setAge("SOY DATA");
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
+
 }
